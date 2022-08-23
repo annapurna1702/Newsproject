@@ -1,0 +1,42 @@
+<div class="container">
+    <h2 style="color:azure">Please copy the details to this form to ensure authenticity</h2>
+    <div class="row">
+        <form #addnews="ngForm" (ngSubmit)="Addnews()">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3">
+                
+
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label style="color:darkorange" for="" class="form-label">Name:</label>
+                    <input type="text" class="form-control" [(ngModel)]="newn.name" name="courseTitle" >
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label style="color:darkorange"for="" class="form-label">Mobile:</label>
+                    <input type="text" class="form-control" [(ngModel)]="newn.mobile" name="courseDuration">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label style="color:darkorange" for="" class="form-label">Email id:</label>
+                    <input type="text"  class="form-control" [(ngModel)]="newn.email" name="courseDescription">
+
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label style="color:darkorange"for="" class="form-label">Title:</label>
+                    <input type="text" class="form-control" [(ngModel)]="newn.title" name="courseVenue">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label style="color:darkorange"for="" class="form-label">Date:</label>
+                    <input type="date" name="" id="" class="form-control" [(ngModel)]="newn.date" name="courseDate">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label style="color:darkorange"for="" class="form-label">Description:</label>
+                    <textarea rows="20" cols="20" class="form-control" [(ngModel)]="newn.description" name="courseDate"></textarea>
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <button class="btn btn-success">Accept</button>
+                </div>
+            
+            </div>
+        </div>
+    </form>
+    </div>
+</div>

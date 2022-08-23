@@ -1,0 +1,58 @@
+<div class="container">
+    <h2 align="center" style="color: aliceblue;"> <b><u> USER CAN POST NEWS HERE!</u></b></h2>
+    <div class="row">
+        <form #enternews="ngForm" (ngSubmit)="Enternews()">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3">
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                     <label style="color:azure" for="" class="form-label">NAME</label>
+                    <input type="text" class="form-control"[(ngModel)]="data.name" name="courseTitle">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label  style="color:azure"  for="" class="form-label">PHONE</label>
+                    <input type="text" class="form-control" [(ngModel)]="data.mobile" name="courseTitle">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label style="color:azure" for="" class="form-label">EMAIL</label>
+                    <input type="text" class="form-control"[(ngModel)]="data.email" name="courseTitle">
+                </div>  
+  
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label style="color:azure" for="" class="form-label">DATE</label>
+                  <input type="date" class="form-control" [(ngModel)]="data.date" name="courseTitle">
+              </div> 
+  
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label style="color:azure" for="" class="form-label">TITLE</label>
+                  <input type="text" class="form-control" [(ngModel)]="data.title" name="courseTitle">
+              </div> 
+  
+              
+  
+  
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label style="color:azure" for="" class="form-label">DESCRIPTION</label>
+                    <textarea name="" id="" cols="30" rows="10" class="form-control" [(ngModel)]="data.description" name="courseTitle"></textarea>
+                </div>  
+  
+                
+  
+  
+              
+  
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <button class="btn btn-success">SEND</button>
+                </div>
+                
+            
+  
+  
+            </div>
+        
+        </div></form><div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  
+            <a  href="http://localhost:4200/userentry"  class="card-button btn btn-danger" target="_self">RESET</a>
+         </div>
+          
+    </div>
+  </div>
