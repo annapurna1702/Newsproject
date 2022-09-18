@@ -21,5 +21,20 @@ export class CitnewsService {
   enternews(data:any){
     return this.http.post<any>('http://localhost:3000/addcitnews',data)
   }
+  signups(sdata:any){
+    return this.http.post<any>('http://localhost:3900/signup',sdata)
+  }
+  logins(cdata:any){
+    return this.http.post<any>('http://localhost:3900/signup',cdata)
+  }
+  viewsign=()=>{
+    return this.http.get('http://localhost:3900/viewsign')
+  }
+  viewnew=()=>{
+    return this.http.get('http://localhost:3700/viewonenews')
+  }
+  
+
+
   
 }

@@ -1,3 +1,6 @@
+<app-home></app-home>
+
+
 <div class="container">
     <h2 style="color:azure">Please copy the details to this form to ensure authenticity</h2>
     <div class="row">
@@ -12,11 +15,11 @@
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label style="color:darkorange"for="" class="form-label">Mobile:</label>
-                    <input type="text" class="form-control" [(ngModel)]="newn.mobile" name="courseDuration">
+                    <input type="text" maxlength="10" class="form-control" [(ngModel)]="newn.mobile" name="courseDuration">
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label style="color:darkorange" for="" class="form-label">Email id:</label>
-                    <input type="text"  class="form-control" [(ngModel)]="newn.email" name="courseDescription">
+                    <input type="email"  class="form-control" [(ngModel)]="newn.email" name="courseDescription">
 
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">

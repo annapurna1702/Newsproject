@@ -1,0 +1,43 @@
+<app-home></app-home>
+
+<div class="container">
+    <h2 align="center"style="color:azure" >login</h2>
+    <div class="row">
+        <form #signups="ngForm" (ngSubmit)="Logins()" >
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                     <label style="color:azure" for="" class="form-label">NAME</label>
+                    <input type="text"  class="form-control" [(ngModel)]="cdata.name">
+                </div>
+  
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label style="color:azure"  for="" class="form-label">PASSWORD</label>
+                 <input type="password"   class="password form-control" [(ngModel)]="cdata.password">
+             </div> 
+ 
+             <div align="center" class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+               <button class="btn btn-success"  (ngOnClick)="Logins()">Login</button>
+           
+              </div></div></div></form>
+           <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3">
+<p align="center" style="color:aliceblue">Create new account</p>
+<div class="text-center"> 
+
+
+           <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <a  href="http://localhost:4200/viewuser"   class="card-button btn btn-success" target="_blank">Sign Up</a>
+           </div>
+           </div>
+           
+           
+  
+  
+            </div>
+        
+       
+    </div>
+  </div>
+
+  

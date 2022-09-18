@@ -26,5 +26,5 @@ export class ViewuserComponent implements OnInit {
   ngOnInit(): void {
   }
   adata:any=[]
- 
+  
 }

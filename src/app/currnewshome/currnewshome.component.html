@@ -1,0 +1,13 @@
+<app-home></app-home>
+<marquee  style="color:aliceblue" behavior="slide" direction="ltr"  ><h5>Welcome to News@tip.You can browse and post your news in our website.</h5></marquee>
+
+<br /><br /><br /><br /><div  align="right" class="container">
+  <h2 style="color:azure">Currently Uploaded news</h2>
+  <br />
+  <table align="right" border="0">
+      <tr><td>
+          <div *ngFor="let i of adata" class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <marquee align="right"  style="color:rgb(224, 243, 254)" behavior="slide" direction="up" loop="infinite" >{{i.title}}<br />{{i.description}}<hr /></marquee>   
+          </div></td>
+      </tr>
+      </table>       </div>

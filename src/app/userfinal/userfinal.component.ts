@@ -8,16 +8,16 @@ import { CitnewsService } from '../citnews.service';
 export class UserfinalComponent implements OnInit {
 
   constructor(private ami:CitnewsService) {
-    ami.viewadmin().subscribe(
+    ami.viewuser().subscribe(
       (response)=>
       {
-        this.data=response
+        this.adata=response
       }
     )
    }
 
   ngOnInit(): void {
   }
-  data:any=[]
+  adata:any=[]
 
 }

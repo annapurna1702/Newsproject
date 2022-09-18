@@ -1,0 +1,30 @@
+<app-home></app-home>
+<div class="container">
+    <h2 align="center"style="color:azure" >ADMIN LOGIN</h2>
+    <div class="row">
+        <form #adminlogin="ngForm" (ngSubmit)="Adminlogin()">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                     <label style="color:azure" for="" class="form-label">ADMIN NAME</label>
+                    <input type="text" class="form-control" [(ngModel)]="ldata.name">
+                </div>
+  
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label style="color:azure"  for="" class="form-label">PASSWORD</label>
+                 <input type="text" class="password form-control"[(ngModel)]="ldata.password">
+             </div> 
+  
+             <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <button align="center" href="http://localhost:4200/adminpage"  class="card-button btn btn-primary" target="_blank">LOGIN</button>
+           </div>
+             
+           
+           
+  
+  
+            </div>
+        
+        </div></form>
+    </div>
+  </div>
