@@ -29,6 +29,7 @@ import { MalayalamComponent } from './malayalam/malayalam.component';
 import { HiniComponent } from './hini/hini.component';
 import { EnglishComponent } from './english/english.component';
 import { NewsviewComponent } from './newsview/newsview.component';
+import { AdminnewsComponent } from './adminnews/adminnews.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { NewsviewComponent } from './newsview/newsview.component';
     HiniComponent,
     EnglishComponent,
     NewsviewComponent,
+    AdminnewsComponent,
    
   ],
   imports: [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CitnewsService } from '../citnews.service';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor(private aki:CitnewsService,private http:HttpClient) { 
+  constructor(private aki:CitnewsService) { 
     
     aki.viewsign().subscribe(
       (response)=>
@@ -30,6 +30,26 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+/*(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event:any) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()*/
   }
   
   sdata:any=[
@@ -53,7 +73,7 @@ export class LoginComponent implements OnInit {
     else
       alert("Unsuccessful")
     })
-
+    
     
 
    
