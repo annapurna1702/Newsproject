@@ -8,26 +8,38 @@
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row g-3">
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                     <label style="color:azure" for="" class="form-label">NAME</label>
-                    <input type="text" class="form-control" [(ngModel)]="sdata.name" name="name" >
+                     <label style="color:azure" for="validationCustom01" class="form-label">NAME</label>
+                    <input id="validationCustom01" type="text" class="form-control" [(ngModel)]="sdata.name" pattern="[a-zA-Z ]*" name="name" required >
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feeback" style="color: red">Please provide a name
+                    </div>
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label style="color:azure"  for="" class="form-label">DOB</label>
-                    <input type="date" class="form-control"[(ngModel)]="sdata.dob" name="dob">
+                    <label style="color:azure"  for="validationCustom02" class="form-label">DOB</label>
+                    <input id="validationCustom02" type="date" class="form-control"[(ngModel)]="sdata.dob" name="dob">
+                    <div class="invalid-feeback" style="color: red">Please provide a DOB
+                    </div>
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label  style="color:azure"  for="" class="form-label">PHONE</label>
-                    <input type="text" maxlength="10" class="form-control"[(ngModel)]="sdata.phone" name="phone">
+                    <label  style="color:azure"  for="validationCustom03" class="form-label">PHONE</label>
+                    <input id="validationCustom03" type="text" minlength="10" maxlength="10" class="form-control"[(ngModel)]="sdata.phone" pattern="[0-9]*" name="phone" required>
+                    <div class="invalid-feeback" style="color: red">Please provide a phone number
+                    </div>
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label style="color:azure" for="" class="form-label">EMAIL</label>
-                    <input type="email" class="form-control" [(ngModel)]="sdata.email" name="email" pattern=".+@gmail.com">
+                    <label style="color:azure" for="mail" class="form-label">EMAIL</label>
+                    <input id="mail" type="email" class="form-control" [(ngModel)]="sdata.email" name="email" required pattern=".+@gmail.com">
+                    
+                    <div class="invalid-feeback" style="color: red">Please provide a valid email id
+                    </div>
                 </div>  
 
 
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label style="color:azure" for="" class="form-label">ADDRESS</label>
-                    <textarea name="" id="" cols="30" rows="10" class="form-control" [(ngModel)]="sdata.address" name="address"></textarea>
+                    <label style="color:azure" for="validationCustom04" class="form-label">ADDRESS</label>
+                    <textarea name="" id="validationCustom04" cols="30" rows="10" class="form-control" [(ngModel)]="sdata.address" name="address" required></textarea>
+                    <div class="invalid-feeback" style="color: red">Please provide an address
+                    </div>
                 </div>  
 
                 
@@ -36,32 +48,33 @@
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label style="color:azure"  for="" class="form-label">PASSWORD</label>
                     <span id = "message" style="color:red"> </span>
-                    <input type="password" class=" form-control"[(ngModel)]="sdata.password" name="password" id="password">
+                    <input type="password" class=" form-control"[(ngModel)]="sdata.password" name="password" id="password" required>
                 </div>
 
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label  style="color:azure"for="" class="form-label">CONFIRM PASSWORD</label>
-                    <input type="password" class=" form-control"[(ngModel)]="sdata.password2" name="password2">
+                    <input type="password" class=" form-control"[(ngModel)]="sdata.password2" name="password2" required>
                 </div>
                  
 
-                
+                <div class="group">
+                    <br />
 
                
                 
-                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <button class="btn btn-success">SUBMIT</button>
+                <div *ngIf="signups.valid">
+                    <button class="btn btn-success" (click)="Signups()">SUBMIT</button>
                 </div>
 
-                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <a  href="http://localhost:4200/signup"   class="card-button btn btn-success" target="_self">RESET</a> 
+                <div *ngIf="!signups.valid">
+                    <a  href="http://localhost:4200/signup"   class="card-button btn btn-danger" target="_self">RESET</a> 
                  </div>
 
 
-            </div>
+            </div></div>
         
         </div></form>
     </div>
   </div>
-
+ 
  

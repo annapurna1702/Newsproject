@@ -1,0 +1,41 @@
+<app-adminpage></app-adminpage>
+<div class="container">
+    <h2 style="color:azure">View Feedback</h2>
+    <br />
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3">
+            <div *ngFor="let i of fdata" class="col col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                <div class="card" >
+                    
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.OlnxO753VRgHKDLLDzCKoAHaHw&pid=Api&P=0"  alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title"><b>Name:</b>{{i.name}}</h5> 
+                        <p class="card-title"><b>Phone:</b>{{i.phone}}</p>
+                        <p class="card-title"><b>Email:</b>{{i.email}}</p>
+                        <p class="card-title"><b>First Visit:</b>{{i.firstvisit}}</p>
+                        <p class="card-title"><b>Reason for Visit:</b>{{i.reason}}</p>
+                        <p class="card-text"><b>Ease of Use:</b>{{i.findinfo}}</p>
+                        <p class="card-text"><b>Likelihood to Visit Again:</b>{{i.likelihood}}</p>
+                        <p class="card-text"><b>Suggestion:</b>{{i.suggestion}}</p>
+                        <p class="card-text"><b>Rating:</b>{{i.rating}} out of 5</p>
+                        
+                      
+                    </div>
+                   
+                </div>
+                  
+
+                 
+            </div>
+        </div>
+            
+        </div>  
+        
+<br />
+
+   
+    </div>
+</div>
+
+

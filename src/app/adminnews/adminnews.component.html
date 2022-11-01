@@ -1,60 +1,84 @@
-<app-home></app-home>
+
 <app-adminpage></app-adminpage>
 <div class="container">
     <h2 align="center" style="color: aliceblue;"> <b> Admin can post news here</b></h2>
     <br />
     <div class="row">
-        <form #enternews="ngForm" (ngSubmit)="Enteradnews()">
+        <form #enteradnews="ngForm" (ngSubmit)="Enteradnews()">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row g-3">
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label style="color:azure" for="" class="form-label">IMAGE OR VIDEO FILE</label>
-                   <input type="file" class="form-control"[(ngModel)]="newn.files" name="courseTitle">
+                    <label style="color:azure" for="validationCustom01" class="form-label">IMAGE OR VIDEO URL</label>
+                   <input id="validationCustom01" type="text" class="form-control"[(ngModel)]="newn.img" name="courseTitle" required>
+                   <div class="valid-feedback"></div>
+                   <div class="invalid-feeback" style="color:red">
+                    Please enter a URL
+                   </div>
+                   <a href="https://postimages.org/" target="_blank" style="color: aquamarine">Click here to create url(choose DIRECT LINK from the options)</a>
                </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                     <label style="color:azure" for="" class="form-label">NAME</label>
-                    <input type="text" class="form-control"[(ngModel)]="newn.name" name="courseTitle">
+                     <label style="color:azure" for="validationCustom02" class="form-label">NAME</label>
+                    <input id="validationCustom02" type="text" pattern="[a-zA-z ]*" class="form-control"[(ngModel)]="newn.name" name="name"  required>
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter your name
+                       </div>
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label  style="color:azure"  for="" class="form-label">PHONE</label>
-                    <input type="text" maxlength="10" class="form-control" [(ngModel)]="newn.mobile" name="courseTitle">
+                    <label  style="color:azure"  for="validationCustom03" class="form-label">PHONE</label>
+                    <input id="validationCustom03" type="text" minlength="10" maxlength="10" class="form-control" [(ngModel)]="newn.mobile" name="mobile" pattern="[0-9]*" required>
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter phone number
+                       </div>
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label style="color:azure" for="" class="form-label">EMAIL</label>
-                    <input type="email" class="form-control"[(ngModel)]="newn.email" name="courseTitle" >
+                    <label style="color:azure" for="mail" class="form-label">EMAIL</label>
+                    <input id="mail" type="email" pattern=".+@gmail.com" class="form-control"[(ngModel)]="newn.email"  name="email"  required >
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter a valid email id
+                       </div>
                 </div>  
   
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                  <label style="color:azure" for="" class="form-label">DATE</label>
-                  <input type="date" class="form-control" [(ngModel)]="newn.date" name="courseTitle">
+                  <label style="color:azure" for="validationCustom04" class="form-label">DATE</label>
+                  <input id="validationCustom04" type="date" class="form-control" [(ngModel)]="newn.date" name="date" required>
+                  <div class="invalid-feeback" style="color:red">
+                    Please enter date
+                   </div>
               </div> 
   
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                  <label style="color:azure" for="" class="form-label">TITLE</label>
-                  <input type="text" class="form-control" [(ngModel)]="newn.title" name="courseTitle">
+                  <label style="color:azure" for="validationCustom05" class="form-label">TITLE</label>
+                  <input id="validationCustom05" type="text" class="form-control" [(ngModel)]="newn.title" name="title" required>
+                  <div class="invalid-feeback" style="color:red">
+                    Please enter a title
+                   </div>
               </div> 
   
               
   
   
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label style="color:azure" for="" class="form-label">DESCRIPTION</label>
-                    <textarea name="" id="" cols="30" rows="10" class="form-control" [(ngModel)]="newn.description" name="courseTitle"></textarea>
+                    <label style="color:azure" for="validationCustom06" class="form-label">DESCRIPTION</label>
+                    <textarea id="validationCustom06" cols="30" rows="10" class="form-control" [(ngModel)]="newn.description" name="description" required></textarea>
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter a description
+                       </div>
+                    
                 </div>  
   
                 
-  
-  
+                <div class="group">
+                <br />
               
   
-                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <div *ngIf="enteradnews.valid">
                     <button class="btn btn-success">SEND</button>&nbsp;
                 </div>
                 
-                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <div *ngIf="!enteradnews.valid">
                   
                     <a  href="http://localhost:4200/userentry"  class="card-button btn btn-danger" target="_self">RESET</a>
-                 </div>
+                 </div></div>
   
   
             </div>

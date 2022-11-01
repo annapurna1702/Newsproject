@@ -1,4 +1,4 @@
-<app-home></app-home>
+
 <app-adminpage></app-adminpage>
 
 <div class="container">
@@ -7,36 +7,68 @@
         <form #addnews="ngForm" (ngSubmit)="Addnews()">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row g-3">
-                
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label style="color:azure" for="validationCustom01" class="form-label">Image or Video file URL:</label>
+                   <input id="validationCustom01" type="text" class="form-control"[(ngModel)]="newn.img" name="courseTitle" required><br />
+                   <div class="invalid-feeback" style="color:red">
+                    Please enter a URL
+                   </div>
+                  
+               </div>
 
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label style="color:darkorange" for="" class="form-label">Name:</label>
-                    <input type="text" class="form-control" [(ngModel)]="newn.name" name="courseTitle" >
+                    <label style="color:darkorange" for="validationCustom02" class="form-label">Name:</label>
+                    <input id="validationCustom02" type="text" class="form-control" [(ngModel)]="newn.name" pattern="[a-zA-Z ]*" name="courseTitle" required>
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter name
+                       </div>
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label style="color:darkorange"for="" class="form-label">Mobile:</label>
-                    <input type="text" maxlength="10" class="form-control" [(ngModel)]="newn.mobile" name="courseDuration">
+                    <label style="color:darkorange"for="validationCustom03" class="form-label">Mobile:</label>
+                    <input id="validationCustom03" type="text" minlength="10" maxlength="10" class="form-control" [(ngModel)]="newn.mobile" pattern="[0-9]*" name="courseDuration" required>
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter phone number
+                       </div>
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label style="color:darkorange" for="" class="form-label">Email id:</label>
-                    <input type="email"  class="form-control" [(ngModel)]="newn.email" name="courseDescription">
+                    <label style="color:darkorange" for="mail" class="form-label">Email id:</label>
+                    <input id="mail" type="email"  class="form-control" [(ngModel)]="newn.email" name="courseDescription"  pattern=".+@gmail.com" required >
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter a valid email id
+                       </div>
 
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label style="color:darkorange"for="" class="form-label">Title:</label>
-                    <input type="text" class="form-control" [(ngModel)]="newn.title" name="courseVenue">
+                    <label style="color:darkorange"for="validationCustom04" class="form-label">Title:</label>
+                    <input id="validationCustom04" type="text" class="form-control" [(ngModel)]="newn.title" name="courseVenue" required>
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter a title
+                       </div>
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label style="color:darkorange"for="" class="form-label">Date:</label>
-                    <input type="date" name="" id="" class="form-control" [(ngModel)]="newn.date" name="courseDate">
+                    <label style="color:darkorange"for="validationCustom05" class="form-label">Date:</label>
+                    <input type="date" name="" id="validationCustom05" class="form-control" [(ngModel)]="newn.date" name="courseDate" required>
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter date
+                       </div>
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label style="color:darkorange"for="" class="form-label">Description:</label>
-                    <textarea rows="20" cols="20" class="form-control" [(ngModel)]="newn.description" name="courseDate"></textarea>
-                </div>
-                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label style="color:darkorange" for="validationCustom06" class="form-label">DESCRIPTION</label>
+                    <textarea id="validationCustom06" cols="30" rows="10" class="form-control" [(ngModel)]="newn.description" name="description" required></textarea>
+                    <div class="invalid-feeback" style="color:red">
+                        Please enter a description
+                       </div>
+                    
+                </div>  
+                <div class="group">
+                    <br />
+
+                <div *ngIf="addnews.valid" >
                     <button class="btn btn-success">Accept</button>
                 </div>
+                <div *ngIf="!addnews.valid" >
+                    <a  href="http://localhost:4200/accept"  class="card-button btn btn-danger" target="_self">RESET</a>
+                </div></div>
             
             </div>
         </div>

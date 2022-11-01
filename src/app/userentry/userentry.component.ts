@@ -7,7 +7,7 @@ import { CitnewsService } from '../citnews.service';
 })
 export class UserentryComponent implements OnInit {
   data={
-    files:"",
+    img:"",
     name:"",
     mobile:"",
     email:"",

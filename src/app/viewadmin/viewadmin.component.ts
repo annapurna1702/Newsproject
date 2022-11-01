@@ -32,9 +32,9 @@ export class ViewadminComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  data:any=[]
- 
+ data:any=[]
   Addnews(){
+    
     this.api.addnews(this.newn).subscribe((adata)=>{
       
     })

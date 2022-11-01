@@ -1,0 +1,43 @@
+<ul  class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">News@tip</a>
+    </li>
+    <li class="nav-item">
+      <a style="color:aliceblue" class="nav-link" href="http://localhost:4200/aboutus">About us</a>
+    </li>
+    <li class="nav-item">
+      <a  style="color:aliceblue" class="nav-link" href="http://localhost:4200/guideline">Guideline</a>
+    </li>
+    <li class="nav-item">
+        <a  style="color:aliceblue" class="nav-link" href="http://localhost:4200/unlog">News Channels</a>
+      </li>
+      
+    
+          <li class="nav-item">
+        <a  style="color:aliceblue" class="nav-link" href="http://localhost:4200/contactus">Contact us</a>
+      </li>
+
+      <li class="nav-item">
+        <a   style="color:aliceblue" class="nav-link" href="http://localhost:4200/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a  style="color:aliceblue" class="nav-link" href="http://localhost:4200/adminlogin">Admin login</a>
+      </li>
+  </ul>
+
+<br />
+<marquee  style="color:aliceblue" behavior="slide" direction="ltr"  ><h5>Welcome to News@tip.You can browse and post your news in our website.</h5></marquee>
+
+<br /><br /><br /><br /><div  align="right" class="container">
+  <h2 style="color:azure">Currently Uploaded news</h2>
+  <br />
+  <table align="right" border="0">
+      <tr><td>
+          <div *ngFor="let i of adata" class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <marquee align="right"  style="color:rgb(224, 243, 254)" behavior="slide" direction="up" loop="infinite" ><b style="color:rgb(61, 227, 221)">{{i.title}}</b><br />{{i.description.slice(0,42)}}<hr /></marquee>   
+          </div></td>
+      </tr>
+      </table>       </div>
+        
+
+

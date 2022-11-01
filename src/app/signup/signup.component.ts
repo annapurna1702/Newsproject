@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CitnewsService } from '../citnews.service';
 @Component({
   selector: 'app-signup',
@@ -17,7 +18,7 @@ export class SignupComponent implements OnInit {
  
 }
 
-  constructor(private ali:CitnewsService) {}
+  constructor(private ali:CitnewsService,private route:Router) {}
 
   ngOnInit(): void {
   }
@@ -33,6 +34,7 @@ export class SignupComponent implements OnInit {
   validity(){
     if(this.sdata.password==this.sdata.password2){
       alert("Success")
+      this.route.navigate(['/login'])
     }
     else{
     alert("Passwords don't match")}

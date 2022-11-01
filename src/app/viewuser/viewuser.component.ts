@@ -20,10 +20,11 @@ export class ViewuserComponent implements OnInit {
     
    }
   
-  
+  newsitems:any=[]
   
 
   ngOnInit(): void {
+   this.newsitems=this.asi.newsitems; 
   }
   adata:any=[]
   

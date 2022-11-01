@@ -7,6 +7,7 @@ import { CitnewsService } from '../citnews.service';
 })
 export class CorrectnewsComponent implements OnInit {
   newn={
+    img:"",
     name:"",
     mobile:"",
     email:"",

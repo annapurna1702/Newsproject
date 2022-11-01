@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CitnewsService } from '../citnews.service';
 
 
@@ -17,15 +18,9 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor(private aki:CitnewsService) { 
+  constructor(private aki:CitnewsService,private router:Router) { 
     
-    aki.viewsign().subscribe(
-      (response)=>
-      {
-        this.sdata=response
-        
-      }
-    )
+    
    
   }
 
@@ -49,7 +44,7 @@ export class LoginComponent implements OnInit {
         form.classList.add('was-validated')
       }, false)
     })
-})()*/
+})()
   }
   
   sdata:any=[
@@ -82,6 +77,17 @@ export class LoginComponent implements OnInit {
     
    
     
-  }
+  }*/
+ 
   
+}
+Login(){
+  this.aki.login(this.cdata).subscribe((cdata) => {
+    if (cdata.success === true) {
+      this.router.navigate(['/newspage'])
+    } else {
+      alert(cdata.success)
+    }
+  })
+}
 }

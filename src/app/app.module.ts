@@ -30,6 +30,10 @@ import { HiniComponent } from './hini/hini.component';
 import { EnglishComponent } from './english/english.component';
 import { NewsviewComponent } from './newsview/newsview.component';
 import { AdminnewsComponent } from './adminnews/adminnews.component';
+import { LogoutComponent } from './logout/logout.component';
+import { NewunlogComponent } from './newunlog/newunlog.component';
+import { FeedviewComponent } from './feedview/feedview.component';
+import { NewslistComponent } from './newslist/newslist.component';
 
 
 @NgModule({
@@ -60,6 +64,10 @@ import { AdminnewsComponent } from './adminnews/adminnews.component';
     EnglishComponent,
     NewsviewComponent,
     AdminnewsComponent,
+    LogoutComponent,
+    NewunlogComponent,
+    FeedviewComponent,
+    NewslistComponent,
    
   ],
   imports: [

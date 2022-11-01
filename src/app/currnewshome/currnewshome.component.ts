@@ -15,8 +15,9 @@ export class CurrnewshomeComponent implements OnInit {
       })
 
    }
-
+newsitems:any=[]
   ngOnInit(): void {
+    this.newsitems=this.ahi.newsitems; 
   }
 adata:any=[]
 }

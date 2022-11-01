@@ -2,56 +2,61 @@
 <div class="container">
     <h2 align="center" style="color: aliceblue;"> <b><u>Feedback</u></b></h2>
     <div class="row">
+      <form #feeds="ngForm" (ngSubmit)="Enterfeeds()">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row g-3">
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label style="color:azure" for="" class="form-label">NAME</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="fdata.name" pattern="[a-zA-Z ]*" name="name" required>
+                    <div class="valid-feedback"></div>
+                   <div class="invalid-feeback" style="color:red">
+                    Please enter name
+                   </div>
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label  style="color:azure"  for="" class="form-label">PHONE</label>
-                    <input type="text" class="form-control">
+                    <input type="text" minlength="10" maxlength="10" class="form-control" [(ngModel)]="fdata.phone" pattern="[0-9]*" name="phone" required>
+                    <div class="valid-feedback"></div>
+                   <div class="invalid-feeback" style="color:red">
+                    Please enter phone number
+                   </div>
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label style="color:azure" for="" class="form-label">EMAIL</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control"[(ngModel)]="fdata.email" name="email" pattern=".+@gmail.com" required>
+                    <div class="valid-feedback"></div>
+                   <div class="invalid-feeback" style="color:red">
+                    Please enter a valid email id
+                   </div>
                 </div>  
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                   <label style="color:azure" for="" class="form-label">Is this your first visit to our website?</label>
+                  <select [(ngModel)]="fdata.firstvisit" name="firstvisit" id="" class="form-control">
+                    <option value="Yes">Yes</option>
+                    <option  value="No">No</option>
+                    
+                </select>
               </div> 
-              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label style="color:azure" class="form-check-label" for="flexRadioDefault1">
-                      YES
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label style="color:azure" class="form-check-label" for="flexRadioDefault2">
-                      NO
-                    </label>
-                  </div> 
-             </div>              
+                   
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label style="color:azure" for="" class="form-label">What is the primary reason for your visit to the website?</label>
-                    <textarea name="" id="" cols="15" rows="5" class="form-control"></textarea>
+                    <textarea [(ngModel)]="fdata.reason" name="reason" id="" cols="15" rows="5" class="form-control"></textarea>
                 </div>  
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label  style="color:azure"  for="" class="form-label">How easy was it to find information on the site?</label>
-                    <select name="" id="" class="form-control">
+                    <select [(ngModel)]="fdata.findinfo" name="findinfo" id="" class="form-control">
                         <option value="Very easy">Very easy</option>
-                        <option value="Easy">Easy</option>
-                        <option value="Average">Average</option>
+                        <option  value="Easy">Easy</option>
+                        <option  value="Average">Average</option>
                         <option value="Difficult">Difficult</option>
                         <option value="Very Difficult">Very Difficult</option>
                     </select>
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label  style="color:azure"  for="" class="form-label">What is the likelihood that you will return to the site?</label>
-                    <select name="" id="" class="form-control">
-                        <option value="Extremely Likely">Extremely Likely</option>
-                        <option value="Very Likely">Very Likely</option>
+                    <select [(ngModel)]="fdata.likelihood" name="likelihood"  id="" class="form-control">
+                        <option  value="Extremely Likely">Extremely Likely</option>
+                        <option  value="Very Likely">Very Likely</option>
                         <option value="Moderately Likely">Moderately Likely</option>
                         <option value="Slightly Likely">Slightly Likely</option>
                         <option value="Unlikely to Return">Unlikely to return</option>
@@ -59,32 +64,33 @@
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label style="color:azure" for="" class="form-label"> <b> Your valuable suggestions please!</b></label>
-                    <textarea name="" id="" cols="15" rows="5" class="form-control"></textarea>
+                    <textarea [(ngModel)]="fdata.suggestion" name="suggestion" id="" cols="15" rows="5" class="form-control"></textarea>
                 </div> 
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
                         
                     <h6 style="color:aliceblue"><b>Please rate your experience with News@tip</b></h6>
                     
 <fieldset class="rating" align="center">
-<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+<input type="radio" [(ngModel)]="fdata.rating" name="rating" id="star5"  value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+<input type="radio" id="star4half" [(ngModel)]="fdata.rating"name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+<input type="radio" id="star4" [(ngModel)]="fdata.rating"name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+<input type="radio" id="star3half" [(ngModel)]="fdata.rating"name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+<input type="radio" id="star3" [(ngModel)]="fdata.rating"name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+<input type="radio" id="star2half" [(ngModel)]="fdata.rating"name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+<input type="radio" id="star2" [(ngModel)]="fdata.rating"name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+<input type="radio" id="star1half" [(ngModel)]="fdata.rating"name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+<input type="radio" id="star1" [(ngModel)]="fdata.rating"name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+<input type="radio" id="starhalf" [(ngModel)]="fdata.rating"name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
 </fieldset>
                 </div>
-                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">                   
+                <div class="group">
+                 <div *ngIf="feeds.valid">                   
                    <button class="btn btn-success">SUBMIT</button>
                   </div>
-                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <div *ngIf="!feeds.valid">
                   <button class="btn btn-danger">EDIT</button>
+            </div></div>
             </div>
-            </div>
-        </div>
+        </div></form>
     </div>
   </div>
